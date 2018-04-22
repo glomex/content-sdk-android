@@ -16,6 +16,7 @@ import kotlinx.android.parcel.Parcelize
  *  }
  * ```
  */
+@SuppressWarnings("ParcelCreator")
 @Parcelize
 internal data class Tracking(
         @SerializedName("method") val method: Method,

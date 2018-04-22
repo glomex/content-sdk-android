@@ -1,6 +1,5 @@
-package com.glomex.conectsdk.internal.api
+package com.glomex.contentsdk.internal.api
 
-import com.glomex.contentsdk.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 

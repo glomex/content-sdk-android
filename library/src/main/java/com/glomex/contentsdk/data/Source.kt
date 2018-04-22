@@ -15,6 +15,7 @@ import kotlinx.android.parcel.Parcelize
  * ```
  */
 @Keep
+@SuppressWarnings("ParcelCreator")
 @Parcelize
 data class Source(
         @SerializedName("progressive") val progressive: String? = null,

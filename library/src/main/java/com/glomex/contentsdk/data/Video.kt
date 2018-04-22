@@ -24,6 +24,7 @@ import kotlinx.android.parcel.Parcelize
  *  }
  * ```
  */
+@SuppressWarnings("ParcelCreator")
 @Parcelize
 internal data class Video(
         @SerializedName("clip_id") val method: String,
