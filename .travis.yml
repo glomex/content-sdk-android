@@ -2,6 +2,10 @@ language: android
 jdk: oraclejdk8
 sudo: required
 
+branches:
+  except:
+  - gh-pages
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -36,5 +40,17 @@ android:
     #- sys-img-armeabi-v7a-android-27
     #- sys-img-armeabi-v7a-android-14
 
-script:
-- ./gradlew clean test build
+jobs:
+  include:
+    - stage: build
+      script: ./gradlew build
+    - stage: test
+      script: ./gradlew test
+    - stage: deploy
+      script: ./gradlew bintrayUpload
+
+stages:
+  - build
+  - test
+  - name: deploy
+    if: branch = master
