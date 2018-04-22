@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: rootProject.file('config/version.gradle')
+apply from: rootProject.file('config/dependancy.gradle')
+apply from: rootProject.file('config/signing.gradle')
+apply from: rootProject.file('config/travis.gradle')
+
+android {
+    compileSdkVersion ver.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion ver.minSdkVersion
+        targetSdkVersion ver.targetSdkVersion
+        applicationId "com.glomex.contentsdk.sample"
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debugSigning
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation dep.kotlin
+    implementation dep.appcompat
+    implementation dep.design
+
+    implementation project(':library')
+
+    testImplementation test.junit
+    androidTestImplementation test.runner
+    androidTestImplementation test.espresso
+}

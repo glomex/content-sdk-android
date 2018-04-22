@@ -1,0 +1,27 @@
+def supportLibsVersion = '27.1.1'
+
+// Dependencies
+project.ext.dep = [
+        kotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+        supportAnnotations : "com.android.support:support-annotations:$supportLibsVersion",
+        appcompat          : "com.android.support:appcompat-v7:$supportLibsVersion",
+        design             : "com.android.support:design:$supportLibsVersion",
+        gson               : "com.google.code.gson:gson:2.8.0",
+        retrofit           : "com.squareup.retrofit2:retrofit:2.4.0",
+        retrofitGson       : "com.squareup.retrofit2:converter-gson:2.4.0",
+        retrofitLogging    : "com.squareup.okhttp3:logging-interceptor:3.8.0",
+]
+
+// Tests Dependencies
+project.ext.test = [
+        junit              : "junit:junit:4.12",
+        mockito            : "org.mockito:mockito-core:1.10.19",
+        mockitoKotlin      : "com.nhaarman:mockito-kotlin:1.5.0",
+        runner             : "com.android.support.test:runner:1.0.1",
+        espresso           : "com.android.support.test.espresso:espresso-core:3.0.1",
+]
+
+// Exclusions
+project.ext.excl = [
+        supportAnnotations : [group: 'com.android.support', module: 'support-annotations'],
+]

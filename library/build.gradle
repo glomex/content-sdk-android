@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.kotlin.android.extensions'
+apply from: rootProject.file('config/version.gradle')
+apply from: rootProject.file('config/dependancy.gradle')
+apply from: rootProject.file('config/travis.gradle')
+
+androidExtensions {
+    experimental = true
+}
+
+android {
+    compileSdkVersion ver.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion ver.minSdkVersion
+        targetSdkVersion ver.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro',
+                    rootProject.file('proguard/default.pro'),
+                    rootProject.file('proguard/kotlin.pro'),
+                    rootProject.file('proguard/retrofit.pro')
+        }
+    }
+
+}
+
+dependencies {
+    implementation dep.kotlin
+    implementation dep.supportAnnotations
+    // REST client
+    implementation dep.retrofit
+    implementation dep.retrofitGson
+    debugImplementation dep.retrofitLogging
+
+    testImplementation test.junit
+    testImplementation test.mockito
+    testImplementation test.mockitoKotlin
+}

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Content SDK Sample</string>
+
+    <string name="main_hint_integration_id">Integration ID</string>
+    <string name="main_hint_content_id">Content ID</string>
+    <string name="main_hint_page_url">Page URL</string>
+    <string name="main_submit">Get content</string>
+
+</resources>
