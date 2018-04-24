@@ -18,6 +18,12 @@ object ContentSdk {
     /** Used to track events. */
     private val tracker : Tracker by lazy { ApiTracker(Api.tracking) }
 
+    /**
+     * Loads content.
+     * @param config used to fetch content.
+     * @param callback notifies when content is loaded successfully.
+     * @param error notifies about any error occurred while loading content.
+     */
     fun load(config: ContentConfig,
              callback: (content: Content) -> Unit,
              error: ((Throwable) -> Unit)? = null) {
@@ -29,10 +35,16 @@ object ContentSdk {
         }, error)
     }
 
+    /**
+     * Content configuration. Used to fetch content.
+     */
     @Keep
     data class ContentConfig(
+            /** Integration ID (e.g. teaser-1mcujg5frj4oa0fv2). */
             val integrationId: String,
+            /** Content ID (e.g. v-bkjbsi6sv3m9). */
             val contentId: String,
+            /** Page URL (e.g. http://www.tz.de). */
             val pageUrl: String
     )
 

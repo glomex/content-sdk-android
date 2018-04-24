@@ -1,9 +1,13 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.kotlin.android.extensions'
+apply plugin: 'org.jetbrains.dokka-android'
 apply from: rootProject.file('config/version.gradle')
 apply from: rootProject.file('config/dependancy.gradle')
 apply from: rootProject.file('config/travis.gradle')
+apply from: rootProject.file('config/publish/config.gradle')
+
+archivesBaseName = bintrayName
 
 androidExtensions {
     experimental = true
@@ -34,6 +38,11 @@ android {
 
 }
 
+dokka {
+    outputFormat = 'javadoc'
+    outputDirectory = "$buildDir/docs/javadoc"
+}
+
 dependencies {
     implementation dep.kotlin
     implementation dep.supportAnnotations
@@ -47,3 +56,6 @@ dependencies {
     testImplementation test.mockitoKotlin
     testImplementation test.kotlinReflect
 }
+
+apply from: rootProject.file('config/publish/maven.gradle')
+apply from: rootProject.file('config/publish/bintray.gradle')

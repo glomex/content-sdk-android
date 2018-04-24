@@ -1,0 +1,24 @@
+ext {
+    bintrayUserOrg = 'glomex'
+    bintrayRepo = 'maven'
+    bintrayName = 'content-sdk'
+
+    publishedGroupId = 'com.glomex'
+    libraryName = 'Content SDK'
+    artifact = 'content-sdk'
+
+    libraryDescription = 'An SDK that offers easy access for developers to video sources and Glomex tracking events.'
+
+    siteUrl = 'https://github.com/glomex/content-sdk-android'
+    gitUrl = 'https://github.com/glomex/content-sdk-android.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'stevenrudenko'
+    developerName = 'Steven Rudenko'
+    developerEmail = 'steven.rudenko@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}

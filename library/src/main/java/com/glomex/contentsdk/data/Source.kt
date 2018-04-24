@@ -18,7 +18,9 @@ import kotlinx.android.parcel.Parcelize
 @SuppressWarnings("ParcelCreator")
 @Parcelize
 data class Source(
+        /** Progressive video source. */
         @SerializedName("progressive") val progressive: String? = null,
+        /** HLS video source. */
         @SerializedName("hls") val hls: String? = null
 ): Parcelable
 
