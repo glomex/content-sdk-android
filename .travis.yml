@@ -6,51 +6,47 @@ branches:
   except:
   - gh-pages
 
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
-cache:
-  directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
-    - $HOME/.android/build-cache
-
 env:
   global:
   - ANDROID_API=27
   - ANDROID_BUILD_TOOLS=27.0.3
+  - secure: Rp971v17FnuRb49/Yovxsahi5Fnr+PzcDbOXDroud+CU99pSpI10n+/VpT8keY4VcXbPVE056qi01VJN5Xy7SOEMBSL6EG66OK/ngXwokJ6YzQICAPBZRwqCpfcoIuY551lJXT1I/vNM+ShLce7HguEVnUAGk64svukpL3mc9hDZFqVarA8gBIDL7aXSlrP8jbLteCW7OkGmyyB2y2eObXhf0708SljvMH5vIfSZ6OH/LkTu4gfDzNP2Iy+85jvJyahHOpk3DcLCHo9CsCo0G+Mtc4hyx/v5sbK5gULr/6ECe3PzcnKGmlxY+T6p0yFnO55m8+wQlWoywQ4uUrzM8C2g5SGCi4C9MfA8DhSNODkEksGROv0kVuqt4Hvc9l8YcjzmInBBWoOCqkAA/5vx6dcd7WdOteadbIzF2mIh9naTRVO79BnPftxpHrXr4mosWiPfPIt3xbf3+dBtbCQr3/3S7wKRjd05BtRK1B8ll0WSJ7kZwibbEeuLtr0cZcpLobMCNy5zf52/P5Pgmuxz8exhOAVNZOW/SqS2/S85OYioLYN91kv5b3DwmxJ/9Oei679ksH78qvtt+6QkYsCbQA5DwdvnKbh0Oy4eBSKURBMyFIH+uZo6vyDQFklOg2JOdIyZoIWcJpXCefHVFcISP9uj2x5rXZll4+G0YzXWyo4=
+  - secure: OJcjIYJYrfQvzdHJPxjiRNR4+RyNgfl6LxeTUwAV7v+YZ210bBx0BnmtdGVW2i88cusReHtb9XGqFdFEjaY9xUvZRu+9ovLQo1j0SLjysPe4XByzW2wI1a53oIxiTe9JByPagqsVdnyF6PLPKF6Mv55uzNhROv5LDLCfLk/AzWz7UOjqI10E2Avd/SG4f9ErBmY9ZjaU+lbBuk8THX5R3rTxbS31RJtpEXeSOdrxKP2Iv9h8DQ0c6DNcJZ508TdgcMBoI5wdVlGqJOQ6iNAnXsNIDJi13blaplSp3QU2NpiSuOwycrzFxSqJ5YWapbW1ine1YChiuaYl8UsoSNolaTwklLJA2vzXc1FmPv5Q+XAyx4WikX499dMbTMYDFgcRDKXGtLVuDoC8TsRL1q1PjPnBJUETUmAjGUd/MjTHiNjM7nYikB6YE1MX/X8mcB/v+tlOzUR6wpVggUSoClLhkMJNrmoZioW3JL9BBJPVthJyZx7pUZ/eVHDOasWHaCpF8Qfn6kQ4spBxUXv+NhMxz6kCpaNosQgZUD7qgBlldCv7Ul+csdw4fmJhLZ6bSc7TJoNrnoTGCYVASK9eJZTa//kJ0ts5t+j+80NHtkRwolf8PrepqZxYU2y3udSg81buuSSBCsMapPDcER8PllwZ4Cqcgj5YNkj7bLMur50lAmA=
+  - secure: b6cic0dbtUJqjaVBdcvCr14JrhgRB6rK2VZ063R+KXDk+9SeJyVcVGjQKLTHfsKrVxY1dkZU2UMpF4dNwCLvf5vaio0euDMHykNPHeY3VoKUCl3yKfrRrcu7I/5mOMyNoKN6eoQS08AcaLUXkYYrf+a7hv59x9AFv6GrYYX3tpEfxSJfB6ossiEOO7J4fOGOQFWAMKy5TbWV0i7cHa67ZSOcosFhIBjn694ZgMi8XFaoMnR8wKxmfvbpuS2t8/Toq/Z6yIhcZ/k/8GtscrTPBg4+ELRTgCuZvQyWn1k0bKwS1Co2z6eDg4wXDE2KV9nRaGcbn8oSFbmTFqRQMCn9iLksKKm+vJz0zO9XA9WPHWszVxR9d3UyYk/3nP3LWOR9ZhjbWDi4yIcp0nvOLBK9g5CTALgVlWGU744E7c7vR1E8v/wApcffuoIQAbKU67ca1ENUekLiZAGtnNDGe3e4pDknMqqilRca0ikrCANIr/5dXjfkQPFjZE4Spo0nrOJ8cuKCNATT+aPWXjcA0fQrdgzC3lhHiezZAD3DIht1c7QdCD5DxF17OuM8fzmuV2X7rVIGTPU5E5uexh0LHVmFV9R1MJa9UUwrkO3TuCWamRSpU5qxMTQo4XNI7saYqFaQF1BtPAdZ0gX7dpRsu3WwKmGtiGlNkbJc3b3R6U3qrpg=
+
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  - "$HOME/.android/build-cache"
+
+before_install:
+- echo "bintray.user=$BINTRAY_USER" > local.properties
+- echo "bintray.apikey=$BINTRAY_APIKEY" > local.properties
+- echo "bintray.gpg.password=$BINTRAY_GPG_PASSWORD" > local.properties
 
 android:
   components:
-    # Uncomment the lines below if you want to
-    # use the latest revision of Android SDK Tools
-    # - tools
-    # - platform-tools
-    # The BuildTools version used by your project
-    - build-tools-${ANDROID_BUILD_TOOLS}
-    # The SDK version used to compile your project
-    - android-${ANDROID_API}
-    # Additional components
-    #- extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    # Specify at least one system image,
-    # if you need to run emulator(s) during your tests
-    #- sys-img-armeabi-v7a-android-27
-    #- sys-img-armeabi-v7a-android-14
+  - build-tools-${ANDROID_BUILD_TOOLS}
+  - android-${ANDROID_API}
+  - extra-google-m2repository
+  - extra-android-m2repository
 
 jobs:
   include:
-    - stage: build
-      script: ./gradlew build
-    - stage: test
-      script: ./gradlew test
-    - stage: deploy
-      script: ./gradlew bintrayUpload
+  - stage: build
+    script: "./gradlew build"
+  - stage: test
+    script: "./gradlew test"
+  - stage: deploy
+    script: "./gradlew bintrayUpload"
 
 stages:
-  - build
-  - test
-  - name: deploy
-    if: branch = master
+- build
+- test
+- name: deploy
+  if: branch = master
