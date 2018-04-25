@@ -1,7 +1,7 @@
 package com.glomex.contentsdk.internal.tracker
 
 import com.glomex.contentsdk.data.Method
-import com.glomex.contentsdk.error.ContentSdkError.TrackingError
+import com.glomex.contentsdk.error.TrackingError
 import com.glomex.contentsdk.internal.api.TrackingApi
 import com.glomex.contentsdk.internal.event.Event
 import retrofit2.Call

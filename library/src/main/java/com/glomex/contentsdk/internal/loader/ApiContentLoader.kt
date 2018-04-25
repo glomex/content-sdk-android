@@ -2,8 +2,8 @@ package com.glomex.contentsdk.internal.loader
 
 import com.glomex.contentsdk.ContentSdk
 import com.glomex.contentsdk.data.Video
-import com.glomex.contentsdk.error.ContentSdkError.ContentLoadingError
-import com.glomex.contentsdk.error.ContentSdkError.ContentSdkGenericError
+import com.glomex.contentsdk.error.ContentLoadingError
+import com.glomex.contentsdk.error.ContentSdkGenericError
 import com.glomex.contentsdk.internal.api.GlomexApi
 import com.glomex.contentsdk.internal.api.GlomexApi.VideoResponse
 import retrofit2.Call

@@ -29,7 +29,6 @@ if (project.hasProperty("kotlin")) { // Kotlin libraries
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
-    println 'javadoc path: ' + javadoc.destinationDir
     from javadoc.destinationDir
 }
 
