@@ -17,8 +17,8 @@ android {
     defaultConfig {
         minSdkVersion ver.minSdkVersion
         targetSdkVersion ver.targetSdkVersion
-        versionCode 1
-        versionName "0.1.0"
+        versionCode libraryVersionCode
+        versionName libraryVersionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -47,7 +47,7 @@ archivesBaseName = bintrayName
 android.libraryVariants.all { variant ->
     variant.outputs.all { output ->
         if (outputFile != null && outputFile.name.endsWith('.aar')) {
-            outputFileName = "${bintrayName}-${libraryVersion}-${variant.name}.aar"
+            outputFileName = "${bintrayName}-${libraryVersionName}-${variant.name}.aar"
         }
     }
 }

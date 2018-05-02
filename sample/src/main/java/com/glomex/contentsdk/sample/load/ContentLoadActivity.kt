@@ -43,7 +43,7 @@ class ContentLoadActivity : AppCompatActivity(), ContentLoadContract.View {
                 submit
         )
 
-        val inputWatcher = TextWatcherUtils.watchTextChanged { s ->
+        val inputWatcher = TextWatcherUtils.watchTextChanged {
             var isSubmitEnabled = true
             if (integrationId.text.isEmpty()) {
                 isSubmitEnabled = false

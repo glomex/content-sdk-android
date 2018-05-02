@@ -15,8 +15,6 @@ android {
         applicationId "com.glomex.contentsdk.sample"
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -36,8 +34,4 @@ dependencies {
     implementation dep.design
 
     implementation project(':library')
-
-    testImplementation test.junit
-    androidTestImplementation test.runner
-    androidTestImplementation test.espresso
 }
