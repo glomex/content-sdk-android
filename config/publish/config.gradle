@@ -12,8 +12,8 @@ ext {
     siteUrl = 'https://github.com/glomex/content-sdk-android'
     gitUrl = 'https://github.com/glomex/content-sdk-android.git'
 
-    libraryVersionCode = 2
-    libraryVersionName = '0.1.1'
+    libraryVersionCode = 3
+    libraryVersionName = '0.1.2'
 
     developerId = 'stevenrudenko'
     developerName = 'Steven Rudenko'
