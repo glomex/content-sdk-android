@@ -20,12 +20,12 @@ class ContentLoadPresenter: ContentLoadContract.Presenter {
                 pageUrl = pageUrl
         )
         ContentSdk.load(
-                config,
-                {
+                config = config,
+                callback = {
                     content -> view.showContent(config, content)
                     view.setInputControlsEnabled(true)
                 },
-                {
+                error = {
                     error -> view.showError(error.cause?.message ?: error.message)
                     view.setInputControlsEnabled(true)
                 }

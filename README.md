@@ -7,9 +7,30 @@ An SDK that offers easy access for developers to video sources and Glomex tracki
 
 ```
 dependencies {
-  implementation 'com.glomex:content-sdk:0.1.2'
+  implementation 'com.glomex:content-sdk:0.1.3'
 }
 ```
+
+## Integration
+`ContentSdk.load()` is used to load content. `Content` is passed to `callback` if content loaded successfully or `error` will be executed with exception:
+```kotlin
+val config = ContentSdk.ContentConfig(
+        integrationId = integrationId,
+        contentId = contentId,
+        pageUrl = pageUrl
+)
+ContentSdk.load(
+        config = config,
+        callback = { content -> ... },
+        error = { error -> ... }
+)
+```
+
+`Content` is used to get sources by `content.getSources()`
+
+Track content events:
+- `content.trackContentBegin()` to track content beginning event
+- `content.trackAdBegin(AdType)` to track ad beginning event by type
 
 ## License
 ```

@@ -33,5 +33,6 @@ dependencies {
     implementation dep.appcompat
     implementation dep.design
 
-    implementation project(':library')
+    debugImplementation project(':library')
+    releaseImplementation 'com.glomex:content-sdk:0.1.3'
 }
