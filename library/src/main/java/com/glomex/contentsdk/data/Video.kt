@@ -1,8 +1,6 @@
 package com.glomex.contentsdk.data
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
 /**
  * Content record.
@@ -24,12 +22,10 @@ import kotlinx.android.parcel.Parcelize
  *  }
  * ```
  */
-@SuppressWarnings("ParcelCreator")
-@Parcelize
 internal data class Video(
         @SerializedName("clip_id") val method: String,
         @SerializedName("source") val source: Source,
         @SerializedName("tracking") val tracking: Map<String, List<Tracking>>
-): Parcelable
+)
 
 

@@ -1,6 +1,8 @@
 package com.glomex.contentsdk
 
+import android.os.Parcelable
 import android.support.annotation.Keep
+import com.glomex.contentsdk.data.Video
 import com.glomex.contentsdk.internal.ContentImpl
 import com.glomex.contentsdk.internal.Session
 import com.glomex.contentsdk.internal.api.Api
@@ -9,6 +11,7 @@ import com.glomex.contentsdk.internal.loader.ApiContentLoader
 import com.glomex.contentsdk.internal.loader.ContentLoader
 import com.glomex.contentsdk.internal.tracker.ApiTracker
 import com.glomex.contentsdk.internal.tracker.Tracker
+import kotlinx.android.parcel.Parcelize
 
 /** Content SDK entry point. Used to load content. */
 @Keep
@@ -17,6 +20,8 @@ object ContentSdk {
     private val loader : ContentLoader by lazy { ApiContentLoader(Api.glomex) }
     /** Used to track events. */
     private val tracker : Tracker by lazy { ApiTracker(Api.tracking) }
+    /** Used to cache content requests. */
+    private val cache: MutableMap<ContentConfig, Pair<Session, Video>> = mutableMapOf()
 
     /**
      * Loads content.
@@ -29,16 +34,33 @@ object ContentSdk {
              error: ((Throwable) -> Unit)? = null) {
         loader.load(config, { video ->
             val session = Session.generate()
-            val processor = EventsProcessorImpl(session, video.tracking, tracker)
-            val content = ContentImpl(video.source, processor)
+            cache[config] = Pair(session, video)
+            val content = createContent(session, video)
             callback(content)
         }, error)
+    }
+
+    /**
+     * Gets content from local cache.
+     * @param config used to get content.
+     */
+    fun get(config: ContentConfig): Content? {
+        return cache[config]?.let {
+            createContent(it.first, it.second)
+        }
+    }
+
+    private fun createContent(session: Session, video: Video): Content {
+        val processor = EventsProcessorImpl(session, video.tracking, tracker)
+        return ContentImpl(video.source, processor)
     }
 
     /**
      * Content configuration. Used to fetch content.
      */
     @Keep
+    @SuppressWarnings("ParcelCreator")
+    @Parcelize
     data class ContentConfig(
             /** Integration ID (e.g. teaser-1mcujg5frj4oa0fv2). */
             val integrationId: String,
@@ -46,6 +68,6 @@ object ContentSdk {
             val contentId: String,
             /** Page URL (e.g. http://www.tz.de). */
             val pageUrl: String
-    )
+    ) : Parcelable
 
 }

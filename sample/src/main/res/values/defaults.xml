@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="default_integration_id">teaser-1mcujg5frj4oa0fv2</string>
-    <string name="default_content_id">v-bkjbsi6sv3m9</string>
-    <string name="default_page_url">https://www.tz.de</string>
+    <string name="global_integration_id" translatable="false">teaser-1mcujg5frj4oa0fv2</string>
+    <string name="global_content_id" translatable="false">v-bl2622ut1xs1</string>
+    <string name="global_page_url" translatable="false">https://www.tz.de</string>
+
+    <string name="geoblocked_integration_id" translatable="false">teaser-1mcujg5frj4oa0fv2</string>
+    <string name="geoblocked_content_id" translatable="false">v-bkjbsi6sv3m9</string>
+    <string name="geoblocked_page_url" translatable="false">https://www.tz.de</string>
+
+    <string name="default_integration_id" translatable="false">@string/global_integration_id</string>
+    <string name="default_content_id" translatable="false">@string/global_content_id</string>
+    <string name="default_page_url" translatable="false">@string/global_page_url</string>
 
 </resources>

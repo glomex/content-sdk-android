@@ -3,7 +3,7 @@ package com.glomex.contentsdk.internal.loader
 import com.glomex.contentsdk.ContentSdk
 import com.glomex.contentsdk.data.Video
 import com.glomex.contentsdk.error.ContentLoadingError
-import com.glomex.contentsdk.error.ContentSdkGenericError
+import com.glomex.contentsdk.error.ContentSdkError
 import com.glomex.contentsdk.internal.api.GlomexApi
 import com.glomex.contentsdk.internal.api.GlomexApi.VideoResponse
 import retrofit2.Call
@@ -38,8 +38,8 @@ internal class ApiContentLoader(
                     }
 
                     override fun onFailure(call: Call<VideoResponse>, t: Throwable) {
-                        error?.invoke(ContentSdkGenericError(
-                                ContentSdkGenericError.NETWORK_ERROR,
+                        error?.invoke(ContentSdkError(
+                                ContentSdkError.NETWORK_ERROR,
                                 "Problems with network request",
                                 t
                         ))

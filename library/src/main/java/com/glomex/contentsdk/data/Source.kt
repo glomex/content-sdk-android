@@ -1,9 +1,7 @@
 package com.glomex.contentsdk.data
 
-import android.os.Parcelable
 import android.support.annotation.Keep
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
 /**
  * Content source.
@@ -15,13 +13,11 @@ import kotlinx.android.parcel.Parcelize
  * ```
  */
 @Keep
-@SuppressWarnings("ParcelCreator")
-@Parcelize
 data class Source(
         /** Progressive video source. */
         @SerializedName("progressive") val progressive: String? = null,
         /** HLS video source. */
         @SerializedName("hls") val hls: String? = null
-): Parcelable
+)
 
 

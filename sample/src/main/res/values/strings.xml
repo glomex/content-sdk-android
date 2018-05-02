@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Content SDK Sample</string>
-
+    <!-- Main activity -->
     <string name="main_hint_integration_id">Integration ID</string>
     <string name="main_hint_content_id">Content ID</string>
     <string name="main_hint_page_url">Page URL</string>
     <string name="main_submit">Get content</string>
+    <!-- Tracking events -->
+    <string name="track_contentbegin">Track ContentBegin</string>
+    <string name="track_adbegin">Track AdBegin</string>
 
 </resources>
