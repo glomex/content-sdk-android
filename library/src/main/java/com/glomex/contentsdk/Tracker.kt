@@ -1,9 +1,11 @@
-package com.glomex.contentsdk.internal.event
+package com.glomex.contentsdk
 
+import android.support.annotation.Keep
 import com.glomex.contentsdk.data.AdType
 
-/** Used to process events. */
-interface EventsProcessor {
+/** Used to track content events. */
+@Keep
+interface Tracker {
     /**
      * Used to track content begin event.
      */

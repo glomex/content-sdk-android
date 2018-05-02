@@ -1,31 +1,31 @@
-package com.glomex.contentsdk.internal.event
+package com.glomex.contentsdk.internal
 
 import com.glomex.contentsdk.Utils
 import com.glomex.contentsdk.data.AdTypeTest
 import com.glomex.contentsdk.data.Tracking
 import com.glomex.contentsdk.data.TrackingTest
-import com.glomex.contentsdk.internal.Session
-import com.glomex.contentsdk.internal.tracker.Tracker
+import com.glomex.contentsdk.internal.tracker.Event
+import com.glomex.contentsdk.internal.tracker.EventTracker
 import com.nhaarman.mockito_kotlin.*
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 
-/** Tests for [EventsProcessorImpl]. */
-class EventsProcessorImplTest {
+/** Tests for [TrackerImpl]. */
+class TrackerImplTest {
     private val session = Session.generate()
     private val events = mapOf(
             Pair(Event.CONTENT_BEGIN, Utils.randomList(factory = TrackingTest::random)),
             Pair(Event.AD_BEGIN, Utils.randomList(factory = TrackingTest::random))
     )
-    private val trackerMock = mock<Tracker>()
+    private val trackerMock = mock<EventTracker>()
 
-    private lateinit var target: EventsProcessor
+    private lateinit var target: com.glomex.contentsdk.Tracker
 
     @Before
     fun setUp() {
-        target = EventsProcessorImpl(
+        target = TrackerImpl(
                 session = session,
                 events = events,
                 tracker = trackerMock

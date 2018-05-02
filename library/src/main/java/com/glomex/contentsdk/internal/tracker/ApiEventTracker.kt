@@ -3,15 +3,14 @@ package com.glomex.contentsdk.internal.tracker
 import com.glomex.contentsdk.data.Method
 import com.glomex.contentsdk.error.TrackingError
 import com.glomex.contentsdk.internal.api.TrackingApi
-import com.glomex.contentsdk.internal.event.Event
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 /** Used to send tracking events to tracking endpoints by HTTP request. */
-internal class ApiTracker(
+internal class ApiEventTracker(
         private val api: TrackingApi
-): Tracker {
+): EventTracker {
 
     override fun track(event: Event,
                        callback: (() -> Unit)?,

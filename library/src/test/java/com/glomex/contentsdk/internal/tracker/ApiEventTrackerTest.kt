@@ -4,7 +4,6 @@ import com.glomex.contentsdk.data.Method
 import com.glomex.contentsdk.data.Tracking
 import com.glomex.contentsdk.internal.Session
 import com.glomex.contentsdk.internal.api.TrackingApi
-import com.glomex.contentsdk.internal.event.Event
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.doReturn
 import com.nhaarman.mockito_kotlin.mock
@@ -14,19 +13,19 @@ import org.junit.Test
 import retrofit2.Call
 import java.util.*
 
-/** Tests for [ApiTracker]. */
-class ApiTrackerTest {
+/** Tests for [ApiEventTracker]. */
+class ApiEventTrackerTest {
 
     private val apiMock = mock<TrackingApi> {
         on { get(any(), any()) } doReturn mock<Call<Void>>()
         on { post(any(), any()) } doReturn mock<Call<Void>>()
     }
 
-    private lateinit var target: Tracker
+    private lateinit var target: EventTracker
 
     @Before
     fun setUp() {
-        target = ApiTracker(apiMock)
+        target = ApiEventTracker(apiMock)
     }
 
     /**

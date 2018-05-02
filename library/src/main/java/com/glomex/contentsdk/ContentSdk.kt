@@ -6,11 +6,11 @@ import com.glomex.contentsdk.data.Video
 import com.glomex.contentsdk.internal.ContentImpl
 import com.glomex.contentsdk.internal.Session
 import com.glomex.contentsdk.internal.api.Api
-import com.glomex.contentsdk.internal.event.EventsProcessorImpl
+import com.glomex.contentsdk.internal.TrackerImpl
 import com.glomex.contentsdk.internal.loader.ApiContentLoader
 import com.glomex.contentsdk.internal.loader.ContentLoader
-import com.glomex.contentsdk.internal.tracker.ApiTracker
-import com.glomex.contentsdk.internal.tracker.Tracker
+import com.glomex.contentsdk.internal.tracker.ApiEventTracker
+import com.glomex.contentsdk.internal.tracker.EventTracker
 import kotlinx.android.parcel.Parcelize
 
 /** Content SDK entry point. Used to load content. */
@@ -19,7 +19,7 @@ object ContentSdk {
     /** Used to load content. */
     private val loader : ContentLoader by lazy { ApiContentLoader(Api.glomex) }
     /** Used to track events. */
-    private val tracker : Tracker by lazy { ApiTracker(Api.tracking) }
+    private val tracker : EventTracker by lazy { ApiEventTracker(Api.tracking) }
     /** Used to cache content requests. */
     private val cache: MutableMap<ContentConfig, Pair<Session, Video>> = mutableMapOf()
 
@@ -51,7 +51,7 @@ object ContentSdk {
     }
 
     private fun createContent(session: Session, video: Video): Content {
-        val processor = EventsProcessorImpl(session, video.tracking, tracker)
+        val processor = TrackerImpl(session, video.tracking, tracker)
         return ContentImpl(video.source, processor)
     }
 

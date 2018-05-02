@@ -1,9 +1,7 @@
 package com.glomex.contentsdk.internal.tracker
 
-import com.glomex.contentsdk.internal.event.Event
-
 /** Used to track events. */
-internal interface Tracker {
+internal interface EventTracker {
 
     fun track(event: Event,
               callback: (() -> Unit)? = null,

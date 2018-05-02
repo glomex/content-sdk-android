@@ -3,7 +3,7 @@ package com.glomex.contentsdk.internal
 import com.glomex.contentsdk.Content
 import com.glomex.contentsdk.data.AdType
 import com.glomex.contentsdk.data.Source
-import com.glomex.contentsdk.internal.event.EventsProcessor
+import com.glomex.contentsdk.Tracker
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import org.junit.Assert.assertEquals
@@ -13,7 +13,7 @@ import org.junit.Test
 /** Test for [ContentImpl].  */
 class ContentImplTest {
 
-    private val processorMock = mock<EventsProcessor>()
+    private val processorMock = mock<Tracker>()
     private val source = Source()
 
     private lateinit var target: Content

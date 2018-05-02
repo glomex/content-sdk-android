@@ -3,7 +3,6 @@ package com.glomex.contentsdk.internal.tracker
 import com.glomex.contentsdk.data.Tracking
 import com.glomex.contentsdk.data.TrackingTest
 import com.glomex.contentsdk.internal.Session
-import com.glomex.contentsdk.internal.event.Event
 import org.junit.Assert.*
 import org.junit.Test
 import java.util.*

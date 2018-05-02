@@ -1,4 +1,4 @@
-package com.glomex.contentsdk.internal.event
+package com.glomex.contentsdk.internal.tracker
 
 import com.glomex.contentsdk.data.Method
 import com.glomex.contentsdk.data.Tracking
