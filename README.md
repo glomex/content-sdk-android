@@ -1,4 +1,4 @@
-[![dev: Build Status](https://travis-ci.org/glomex/content-sdk-android.svg?branch=dev)](https://travis-ci.org/glomex/content-sdk-android) [![Download](https://api.bintray.com/packages/glomex/maven/content-sdk/images/download.svg?version=0.1.3)](https://bintray.com/glomex/maven/content-sdk/0.1.3/link) [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE) ![Platform](https://img.shields.io/badge/platform-Android-lightgrey.svg)
+[![dev: Build Status](https://travis-ci.org/glomex/content-sdk-android.svg?branch=dev)](https://travis-ci.org/glomex/content-sdk-android) [![Download](https://api.bintray.com/packages/glomex/maven/content-sdk/images/download.svg)](https://bintray.com/glomex/maven/content-sdk/_latestVersion) [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE) ![Platform](https://img.shields.io/badge/platform-Android-lightgrey.svg)
 
 # Content SDK
 An SDK that offers easy access for developers to video sources and Glomex tracking events.
