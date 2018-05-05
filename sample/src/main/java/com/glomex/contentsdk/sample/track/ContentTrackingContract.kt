@@ -6,7 +6,9 @@ import com.glomex.contentsdk.data.AdType
 /** Content contract.  */
 interface ContentTrackingContract {
 
-    interface View
+    interface View {
+        fun showSources(progressive: String?, hls: String?)
+    }
 
     interface Presenter {
 

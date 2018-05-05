@@ -15,6 +15,8 @@ class ContentTrackingPresenter: ContentTrackingContract.Presenter {
 
     override fun setContent(content: Content) {
         this@ContentTrackingPresenter.content = content
+        val sources = content.getSources()
+        view.showSources(sources.progressive, sources.hls)
     }
 
     override fun trackContentBegin() {

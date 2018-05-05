@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.TextView
 import com.glomex.contentsdk.Content
 import com.glomex.contentsdk.ContentSdk
 import com.glomex.contentsdk.data.AdType
@@ -14,6 +15,9 @@ import com.glomex.contentsdk.sample.R
 
 /** [ContentTrackingContract.View] implementation. */
 class ContentTrackingActivity : AppCompatActivity(), ContentTrackingContract.View {
+
+    private lateinit var progressiveSource: TextView
+    private lateinit var progressiveHls: TextView
 
     private val presenter: ContentTrackingContract.Presenter = ContentTrackingPresenter()
 
@@ -23,6 +27,8 @@ class ContentTrackingActivity : AppCompatActivity(), ContentTrackingContract.Vie
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        progressiveSource = findViewById(R.id.track_sources_progressive)
+        progressiveHls = findViewById(R.id.track_sources_hls)
         findViewById<View>(R.id.track_contentbegin).setOnClickListener {
             presenter.trackContentBegin()
         }
@@ -41,6 +47,11 @@ class ContentTrackingActivity : AppCompatActivity(), ContentTrackingContract.Vie
         getContent()?.let {
             presenter.setContent(it)
         } ?: finish()
+    }
+
+    override fun showSources(progressive: String?, hls: String?) {
+        progressiveSource.text = getString(R.string.track_progressive_format, progressive)
+        progressiveHls.text = getString(R.string.track_hls_format, hls)
     }
 
     private fun getContent(): Content? {

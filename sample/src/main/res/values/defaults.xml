@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="global_integration_id" translatable="false">teaser-1mcujg5frj4oa0fv2</string>
-    <string name="global_content_id" translatable="false">v-bl2622ut1xs1</string>
-    <string name="global_page_url" translatable="false">https://www.tz.de</string>
-
-    <string name="geoblocked_integration_id" translatable="false">teaser-1mcujg5frj4oa0fv2</string>
-    <string name="geoblocked_content_id" translatable="false">v-bkjbsi6sv3m9</string>
-    <string name="geoblocked_page_url" translatable="false">https://www.tz.de</string>
-
-    <string name="default_integration_id" translatable="false">@string/global_integration_id</string>
-    <string name="default_content_id" translatable="false">@string/global_content_id</string>
-    <string name="default_page_url" translatable="false">@string/global_page_url</string>
+    <string name="default_integration_id" translatable="false">6hha243jgs1drmy</string>
+    <string name="default_content_id" translatable="false">v-bdui4dz7vjq9</string>
+    <string name="default_page_url" translatable="false">http://glomex.com</string>
 
 </resources>

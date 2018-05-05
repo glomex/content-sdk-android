@@ -6,7 +6,12 @@
     <string name="main_hint_page_url">Page URL</string>
     <string name="main_submit">Get content</string>
     <!-- Tracking events -->
-    <string name="track_contentbegin">Track ContentBegin</string>
-    <string name="track_adbegin">Track AdBegin</string>
+    <string name="track_contentbegin">ContentBegin</string>
+    <string name="track_contentbegin_submit">Track ContentBegin</string>
+    <string name="track_adbegin">AdBegin</string>
+    <string name="track_adbegin_submit">Track AdBegin</string>
+    <string name="track_sources">Sources</string>
+    <string name="track_progressive_format">Progressive: %s</string>
+    <string name="track_hls_format">HLS: %s</string>
 
 </resources>

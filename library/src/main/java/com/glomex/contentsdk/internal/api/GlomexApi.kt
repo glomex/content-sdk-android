@@ -1,5 +1,6 @@
 package com.glomex.contentsdk.internal.api
 
+import com.glomex.contentsdk.BuildConfig
 import com.glomex.contentsdk.data.Video
 import com.google.gson.annotations.SerializedName
 import retrofit2.Call
@@ -19,7 +20,10 @@ internal interface GlomexApi {
     )
 
     companion object {
-        val BASE_URL = "https://integration-sdk-eu-west-1.dev.mes.glomex.cloud/"
+        val BASE_URL : String = if (BuildConfig.DEBUG)
+            "https://integration-sdk-eu-west-1.dev.mes.glomex.cloud/"
+        else
+            "https://integration-sdk-eu-west-1.mes.glomex.cloud/"
     }
 
 }
