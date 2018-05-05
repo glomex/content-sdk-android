@@ -7,7 +7,7 @@ An SDK that offers easy access for developers to video sources and Glomex tracki
 
 ```
 dependencies {
-  implementation 'com.glomex:content-sdk:0.1.3'
+  implementation 'com.glomex:content-sdk:1.0.0'
 }
 ```
 
